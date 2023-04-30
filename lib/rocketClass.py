@@ -6,7 +6,7 @@ class Rocket:
     def __init__(self, hz = 1):
         self._current_location = [0,0,0] # x, y, z
         self._hertz = hz
-        self._time = 1/self._hertz
+        self._time_rate = 1/self._hertz
         self._previous_locations = [] # List of lists of previous velocities
 
     def calculatePosition(self, velocity):
@@ -26,7 +26,7 @@ class Rocket:
             if velocity[i] > 1 or velocity[i] < -1:
                 raise ValueError("Value must be a float from -1 to 1")
         for i in range(3):
-            self._current_location[i] += velocity[i] * self._time
+            self._current_location[i] += velocity[i] * self._time_rate
         self._previous_locations.append(list(self._current_location))
         return list(self._current_location)
 
@@ -36,7 +36,7 @@ class Rocket:
         param hz: int that represents the amount of data per second. Default of 1.
         """
         self._hertz = hz
-        self._time = 1/self._hertz
+        self._time_rate = 1/self._hertz
 
     def getPosition(self):
         """
