@@ -16,8 +16,8 @@ def singleRocketPath(file_path,hz=1):
 def main():
     rocketPath = singleRocketPath("sample.csv")
     graph = Graph(amount=2)
-    graph.addPlot(2,2,1,rocketPath,title="Normal")
-    graph.addPlot(2,2,2,Smooth.cubicSplineInterpolation(rocketPath,subdivisons=2),title="Smoothed")
+    graph.addPlot(2,2,1,rocketPath)
+    graph.addPlot(2,2,2,Smooth.cubicSplineInterpolation(rocketPath,subdivisons=2))
     graph.addPlot(2,2,3,rocketPath[:2],projection=None,xlegend="X",ylegend="Y")
     graph.addPlot(2,2,4,[rocketPath[0],rocketPath[2]],projection=None,xlegend="X",ylegend="Z")
     graph.show()
