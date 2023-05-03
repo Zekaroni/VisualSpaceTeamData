@@ -1,4 +1,4 @@
 # Zekaroni
 .final
-venv
+.venv
 lib/__pycache__
