@@ -18,6 +18,7 @@ class Smooth:
 
         _new_data = []
         _interpolated_points = np.linspace(0, _sample_amount - 1, _total_points)
+        # Caluculates new points
         for func in _functions:
             _new_data.append(func(_interpolated_points))
         return _new_data
